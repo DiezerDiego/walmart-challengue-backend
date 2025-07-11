@@ -3,6 +3,7 @@
 ## ✅ Architecture Strategy
 For **small projects**, use a **Layered Architecture**: `Controller` (handles HTTP requests), `Service` (contains business logic), `Repository` (interacts with the database), `DTO` (data transfer objects), `Entity` (JPA models), and `Mapper` (manual or with MapStruct). This structure is simple and easy to maintain for small to medium applications.  
 For **medium to large projects**, consider using **Hexagonal Architecture (Ports and Adapters)** to decouple business logic from infrastructure. Organize your code into `domain` (models, interfaces), `application` (use cases), `adapters/in` (controllers), `adapters/out` (repositories, external APIs), `infrastructure` (configurations), and `config` (Spring config and beans). This approach improves testability and long-term maintainability.
+<img width="956" height="470" alt="image" src="https://github.com/user-attachments/assets/91208bb0-ff10-4fed-b3f5-8346ae4aa722" />
 
 ## 🔐 Security
 Implement **Spring Security** with JWT-based authentication and role-based authorization. Encrypt passwords using `BCryptPasswordEncoder`. Define protected routes and roles, e.g., `/api/admin/**` for admin users. Store sensitive config like secrets and tokens in **Azure Key Vault**, and avoid hardcoded credentials.
